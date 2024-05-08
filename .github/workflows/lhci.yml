@@ -27,13 +27,13 @@ jobs:
         #   SECRETS_VARS: ${{ github.workspace }}
         # run: echo "$SECRETS_VARS" > "secrets.txt"
         run: echo "Worksace Path ${{ github.workspace }}"
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm install -g @lhci/cli@0.11.x
       - run: lhci collect --staticDistDir=${{ github.workspace }}/_site
       - name: Archive lighthouse results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
           path: .lighthouseci
