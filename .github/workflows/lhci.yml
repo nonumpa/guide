@@ -25,7 +25,7 @@ jobs:
         run: bundle init && bundle add jekyll
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl http://localhost:43210
+        run: bundle exec jekyll build --baseurl ./
         env:
           JEKYLL_ENV: production
       - name: Archive build results
