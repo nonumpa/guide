@@ -40,7 +40,7 @@ jobs:
           node-version: 20
       - run: npm install -g @lhci/cli@0.11.x
       # Collect Lighthouse results from jekyll-build-pages default destination
-      - run: lhci collect --staticDistDir=_site --settings.port=43210
+      - run: lhci collect --staticDistDir=_site
       - name: Archive lighthouse results
         uses: actions/upload-artifact@v4
         with:
