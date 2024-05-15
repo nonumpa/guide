@@ -28,11 +28,11 @@ jobs:
         # run: bundle exec jekyll build
         # env:
         #   JEKYLL_ENV: production
-      - name: Archive build results
-        uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: _site
+      # - name: Archive build results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: site
+      #     path: _site
 
       # Lighthiuse CI
       - uses: actions/setup-node@v4
