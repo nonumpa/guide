@@ -26,8 +26,7 @@
         "http://localhost:4000/visual/index.html",
         "http://localhost:4000/visual/colors/index.html",
         "http://localhost:4000/visual/internationalization/index.html",
-        "http://localhost:4000/visual/typography/index.html",
-        "http://localhost:4000/contcomponents/boilerplate/one-column.html"
+        "http://localhost:4000/visual/typography/index.html"
       ],
       "settings": {
         "preset": "desktop"
