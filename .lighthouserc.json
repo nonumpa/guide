@@ -2,6 +2,12 @@
   "ci": {
     "collect":{
       "numberOfRuns": 1,
+      "startServerCommand": "bundle exec jekyll server",
+      "url": [
+        "http://localhost:3000/",
+        "http://localhost:3000/accessibility-statement.html",
+        "http://localhost:3000/support"
+      ],
       "settings": {
         "preset": "desktop"
       }
