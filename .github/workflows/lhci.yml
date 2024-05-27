@@ -32,8 +32,3 @@ jobs:
       - run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN2 }}
-      # - name: Archive lighthouse results
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: lighthouse-report
-      #     path: .lighthouseci
