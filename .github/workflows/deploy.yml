@@ -10,6 +10,7 @@ on:
 
 jobs:
   deploy-to-gcs:
+    runs-on: ubuntu-latest
     permissions: # Required by google-github-actions/auth
       contents: 'read'
       id-token: 'write'
