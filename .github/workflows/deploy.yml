@@ -1,0 +1,36 @@
+name: Deploy to google cloud storage
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      artifact_name:
+        description: 'Artifact name to deploy'
+        required: true
+        default: 'jekyll-site-<RUN_ID>'
+
+jobs:
+  deploy-to-gcs:
+    permissions: # Required by google-github-actions/auth
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - name: Checkout
+      uses: 'actions/checkout@v4'
+
+    - name: Download artifacts from build
+      uses: actions/download-artifact@v3
+      with:
+        name: jekyll-site
+        path: ./site
+
+    - name: Authenticate to Google Cloud
+      uses: 'google-github-actions/auth@v2'
+      with:
+        workload_identity_provider: ${{ secrets.GC_WORKLOAD_IDENTITY_PROVIDER }}
+
+    - name: Upload to GCS
+      uses: 'google-github-actions/upload-cloud-storage@v2'
+      with:
+        path: './site/_site'
+        destination: 'guide-dev'
