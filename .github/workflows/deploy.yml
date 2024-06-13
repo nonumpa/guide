@@ -19,10 +19,12 @@ jobs:
     - name: Checkout
       uses: 'actions/checkout@v4'
 
+    # ref: https://github.com/actions/download-artifact?tab=readme-ov-file#download-artifacts-from-other-workflow-runs-or-repositories
     - name: Download artifacts from build
       uses: actions/download-artifact@v4
       with:
         name: jekyll-site
+        github-token: ${{ secrets.GH_PAT }} # token with actions:read permissions on target repo
         run-id: ${{ github.event.inputs.RUN_ID }}
         path: ./site
 
