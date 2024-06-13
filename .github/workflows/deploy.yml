@@ -27,6 +27,9 @@ jobs:
         github-token: ${{ secrets.GH_PAT }} # token with actions:read permissions on target repo
         run-id: ${{ github.event.inputs.RUN_ID }}
         path: ./site
+        
+    - name: Display structure of downloaded files
+      run: ls
 
     - name: Authenticate to Google Cloud
       uses: 'google-github-actions/auth@v2'
