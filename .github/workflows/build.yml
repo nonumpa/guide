@@ -26,7 +26,7 @@ jobs:
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default 
         # run: bundle exec jekyll build --baseurl http://localhost:43210
-        run: bundle exec jekyll build --baseurl ${{ env.STAGE_URL }}
+        run: bundle exec jekyll build --baseurl ${{ secrets.STAGING_ENV_URL }}
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
