@@ -35,6 +35,6 @@ jobs:
           path: ./_site
       # custom action to build and push image
       - name: Deploy
-        uses: .github/workflows/deploy.yml
+        uses: ./.github/workflows/deploy.yml
         with:
           RUN_ID: ${{ github.run_id }}
