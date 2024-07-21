@@ -34,8 +34,6 @@ jobs:
           name: jekyll-site
           path: ./_site
       # custom action to build and push image
-      - name: Checkout again
-        uses: actions/checkout@v4
       - name: Deploy
         uses: ./.github/workflows/deploy.yml
         with:
