@@ -5,6 +5,7 @@ on:
       RUN_ID:
         description: 'Artifact run_id to deploy'
         required: true
+        type: string
         default: '<RUN_ID>'
 
 jobs:
