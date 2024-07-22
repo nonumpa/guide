@@ -38,3 +38,4 @@ jobs:
     needs: build
     with:
           RUN_ID: ${{ github.run_id }}
+    secrets: inherit
